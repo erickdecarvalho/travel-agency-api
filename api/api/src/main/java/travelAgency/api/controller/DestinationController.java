@@ -137,7 +137,10 @@ public class DestinationController {
         }
     }
 
-    @GetMapping("/mais-viajados")
+    /*
+    * Funcionalidade: Esse endpoint retorna o destino mais viajado
+    */
+    @GetMapping("/mais-viajado")
     public ResponseEntity<DestinationCreateResponseDTO> getDestinationWithMostTravels() {
         List<Travel> travels = travelRepository.findAll();
 

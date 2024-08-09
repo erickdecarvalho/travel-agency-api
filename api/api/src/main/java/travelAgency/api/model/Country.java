@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -15,12 +16,12 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Country {
-    private static final long serialVersionUID = 1;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     private String name;
-    
+
+    @OneToMany(mappedBy = "country")
+    private List<Destination> destinations;
 }

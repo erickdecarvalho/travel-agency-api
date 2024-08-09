@@ -105,6 +105,9 @@ public class TravelController {
         return ResponseEntity.ok(travelDTOs);
     }
 
+    /*
+    * Funcionalidade: Esse endpoint retorna a viagem mais barata de um destino
+    */
     @GetMapping("/mais-barata/{destinoId}")
     public ResponseEntity<TravelCreateResponseDTO> getCheapestTravelByDestination(@PathVariable UUID destinoId) {
         return travelRepository.findByDestinationId(destinoId).stream()
